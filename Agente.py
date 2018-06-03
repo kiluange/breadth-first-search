@@ -77,14 +77,13 @@ def breadthFirstSearch(problem):
         explored.append(front['state'])
         possibilities = list(filter(lambda opt: opt[0] == front['state'], map))
         for possibiliti in possibilities:
-            node = childNode(possibiliti[1],front,possibiliti[2])
+            node = childNode(possibiliti[1],front,possibiliti[2]+front['coast'])
             if node not in frontier:
                 if node not in explored:
                     if goalTest(node['state']):
                         frontier.append(node)
-                        print(frontier)
-                        return node['state']
+                        return frontier[len(frontier) - 1]
                     frontier.append(node)
 
-solution = 'neamt'
-print(breadthFirstSearch('craiova'))
+solution = 'bucharest'
+print(breadthFirstSearch('arad'))

@@ -82,7 +82,7 @@ class Agente():
             explored.append(front['state'])
             possibilities = list(filter(lambda opt: opt[0] == front['state'], self.map))
             for possibiliti in possibilities:
-                node = self.childNode(possibiliti[1],front,possibiliti[2])
+                node = self.childNode(possibiliti[1],front,possibiliti[2]+front['coast'])
                 if node not in frontier:
                     if node not in explored:
                         if self.goalTest(node['state']):
