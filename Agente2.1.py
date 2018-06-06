@@ -3,6 +3,7 @@ from problem.Problem import Problem
 class Agente():
     def __init__(self, *args, **kwargs):
         self.problem = Problem(args[0],args[1],args[2])
+        print(' ')
         print(self.breadthFirstSearch(self.problem))    
 
     def childNode(self,problem,parent,coast):
