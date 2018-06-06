@@ -89,4 +89,4 @@ class Agente():
                             frontier.append(node)
                             return frontier[len(frontier) - 1]
                         frontier.append(node)
-Agente('oradea','neamt')
+Agente('oradea','iasi')
