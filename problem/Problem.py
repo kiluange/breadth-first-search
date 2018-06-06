@@ -27,6 +27,6 @@ class Problem(object):
     
     def actions(self, state):
         possibilities = list(filter(lambda opt: opt[0] == state, self.maps))
-        print(possibilities)
+        """ print(possibilities) """
         return possibilities
         
