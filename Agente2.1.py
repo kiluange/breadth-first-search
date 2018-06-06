@@ -29,11 +29,10 @@ class Agente():
             explored.append(front['state'])
             for possibiliti in problem.actions(front['state']):
                 node = self.childNode(possibiliti[1],front,possibiliti[2]+front['coast'])
-                if node not in frontier:
-                    if node not in explored:
-                        if problem.goalTest(node['state']):
-                            frontier.append(node)
-                            return frontier[len(frontier) - 1]
+                if node not in frontier or node not in explored:
+                    if problem.goalTest(node['state']):
                         frontier.append(node)
+                        return frontier[len(frontier) - 1]
+                    frontier.append(node)
 
 Agente('arad','bucharest','maps.csv')
